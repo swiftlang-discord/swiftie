@@ -20,6 +20,7 @@ class Swiftie(commands.Bot):
         intents = discord.Intents(
             messages=True,
             message_content=True,
+            guilds=True,
         )
         super().__init__(
             command_prefix=commands.when_mentioned_or(config.PREFIX),
