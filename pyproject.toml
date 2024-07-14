@@ -23,7 +23,6 @@ build-backend = "poetry.core.masonry.api"
 start = "python -m swiftie"
 build = "docker build -t ghcr.io/swiftlang-discord/swiftie:latest -f Dockerfile ."
 run = "docker run -d ghcr.io/swiftlang-discord/swiftie:latest"
-push = "docker push ghcr.io/swiftlang-discord/swiftie:latest"
 fix = "ruff format && ruff check --fix --select I"
 
 [tool.ruff]
