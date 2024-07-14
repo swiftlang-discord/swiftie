@@ -28,6 +28,6 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
+          cache-from: type=registry,ref=ghcr.io/swiftlang-discord/swiftie:latest
           cache-to: type=inline
-          tags: ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
+          tags: ghcr.io/swiftlang-discord/swiftie:latest
