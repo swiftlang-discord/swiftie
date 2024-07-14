@@ -26,8 +26,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          push: true
           context: .
           file: ./Dockerfile
-          cache-from: type=registry,ref=ghcr.io/swiftlang-discord/swiftie:latest
-          cache-to: type=inline
           tags: ghcr.io/swiftlang-discord/swiftie:latest
