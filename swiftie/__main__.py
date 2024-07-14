@@ -58,7 +58,7 @@ def setup_logging():
 
 async def main():
     discord.VoiceClient.warn_nacl = False
-    
+
     async with Swiftie() as bot:
 
         @bot.command(name="ping")
