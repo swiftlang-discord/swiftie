@@ -5,7 +5,7 @@ from discord.ext import commands
 
 log = logging.getLogger(__name__)
 
-initial_extensions = ()
+initial_extensions = ("cogs.event", "cogs.misc")
 
 
 class Swiftie(commands.Bot):
@@ -31,7 +31,7 @@ class Swiftie(commands.Bot):
     async def setup_hook(self) -> None:
         for extension in initial_extensions:
             try:
-                await self.load_extension(extension)
+                await self.load_extension(f"swiftie.{extension}")
             except Exception:
                 log.exception(f"Failed to load extension '{extension}'")
 
