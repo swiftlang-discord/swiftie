@@ -72,7 +72,9 @@ async def main():
             end = time.perf_counter()
             duration = (end - start) * 1000
 
-            response[1] += f" and server round-trip took {duration:.2f}ms • [Read more](<https://en.wikipedia.org/wiki/Lag_(video_games)#Ping_time>)"
+            response[1] += (
+                f" and server round-trip took {duration:.2f}ms • [Read more](<https://en.wikipedia.org/wiki/Lag_(video_games)#Ping_time>)"
+            )
             await message.edit(content="\n".join(response))
 
         @bot.listen()
@@ -81,6 +83,7 @@ async def main():
                 raise error
 
         await bot.start()
+
 
 with setup_logging():
     log = logging.getLogger()
