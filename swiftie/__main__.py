@@ -87,10 +87,7 @@ async def main():
 
 with setup_logging():
     log = logging.getLogger()
-    loop = asyncio.get_event_loop()
     try:
-        loop.run_until_complete(main())
+        asyncio.run(main())
     except KeyboardInterrupt:
         log.info("Received exit signal from user, shutting down...")
-    finally:
-        loop.close()
