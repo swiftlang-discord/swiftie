@@ -30,9 +30,9 @@ BOT_TOKEN=YourDiscordBotTokenHere
 BOT_PREFIX=YourDesiredPrefixHere
 GUILD_ID=YourDiscordTestServerIdHere
 ```
-See [here](https://discordpy.readthedocs.io/en/latest/discord.html) for help obtaining the bot token, and for obtaining the guild's ID you need to:
-- Go to your Discord's user ``Settings`` -> ``Advanced`` and enable ``Developer mode``.
-- Right click the icon of your test, and select ``Copy Server ID`` at the bottom.
+See [here](https://discordpy.readthedocs.io/en/latest/discord.html) for help obtaining the bot token, and for obtaining the guild ID you need to:
+- Go to your discord user ``Settings`` -> ``Advanced`` and enable ``Developer Mode``.
+- Right click the icon of your test server, and select ``Copy Server ID`` at the bottom.
 
 ---
 
