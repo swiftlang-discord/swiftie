@@ -36,13 +36,6 @@ See [here](https://discordpy.readthedocs.io/en/latest/discord.html) for help obt
 
 ---
 
-### Running the project
-
-#### Python
-To run the project regularly with python, use the poetry task ``start``:
+#### Running the project
+Use the ``start`` poetry task to run the python project:
 - ``poetry run task start``
-
-#### Docker
-To build and run the docker image, use the poetry tasks ``build`` and ``run``:
-- ``poetry run task build``
-- ``poetry run task run``
