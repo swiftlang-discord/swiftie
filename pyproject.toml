@@ -4,7 +4,6 @@ version = "1.0.0"
 description = "Discord bot for The Swift Programming Language community."
 authors = ["Swift Discord"]
 license = "Apache 2.0"
-readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
