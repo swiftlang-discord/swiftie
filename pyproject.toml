@@ -1,16 +1,36 @@
 [tool.poetry]
 name = "swiftie"
-version = "0.1.0"
-description = "Discord bot for The Swift Programming Language community"
-authors = ["evrensen467"]
+version = "1.0.0"
+description = "Discord bot for The Swift Programming Language community."
+authors = ["Swift Discord"]
 license = "Apache 2.0"
 readme = "README.md"
-package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.12"
 "discord.py" = "^2.4.0"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.13.0"
+ruff = "^0.5.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+start = "python -m swiftie"
+build = "docker build -t ghcr.io/swiftlang-discord/swiftie:latest -f Dockerfile ."
+run = "docker run -d ghcr.io/swiftlang-discord/swiftie:latest"
+push = "docker push ghcr.io/swiftlang-discord/swiftie:latest"
+fix = "ruff format && ruff check --fix --select I"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 90
+
+[tool.ruff.lint.isort]
+order-by-type = false
+case-sensitive = true
+combine-as-imports = true
