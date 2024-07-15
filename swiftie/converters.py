@@ -1,9 +1,22 @@
 from discord.ext import commands
+import logging
+import discord
+
+log = logging.getLogger(__name__)
 
 
 class CodeBlock(commands.Converter):
     async def convert(self, ctx: commands.Context, _: str):
-        splat = ctx.message.content.split("\n")
+        content = ""
+
+        if ctx.message.reference:
+            if isinstance(ctx.message.reference.resolved, discord.Message):
+                content = ctx.message.reference.resolved.content
+        
+        content = "\n".join([content, ctx.message.content]) if content else ctx.message.content
+        print(content, end="\n\n")
+
+        splat = content.split("\n")
         in_block: bool = False
         lang: str | None = None
         lines: list[str] = []
