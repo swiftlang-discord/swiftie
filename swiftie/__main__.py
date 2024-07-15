@@ -5,8 +5,6 @@ from logging.handlers import RotatingFileHandler
 
 import discord
 
-from .bot import Swiftie
-
 
 class RemoveNoise(logging.Filter):
     def __init__(self):
@@ -55,10 +53,14 @@ def setup_logging():
 
 
 async def main():
+    from .bot import Swiftie
+    from .jdoodle import JDoodleClient
+
     discord.VoiceClient.warn_nacl = False
 
-    async with Swiftie() as bot:
-        await bot.start()
+    async with JDoodleClient() as session:
+        async with Swiftie(session) as bot:
+            await bot.start()
 
 
 with setup_logging():

@@ -3,13 +3,15 @@ import logging
 import discord
 from discord.ext import commands
 
+from .jdoodle import JDoodleClient
+
 log = logging.getLogger(__name__)
 
-initial_extensions = ("cogs.event", "cogs.misc")
+initial_extensions = ("cogs.events", "cogs.misc", "cogs.eval")
 
 
 class Swiftie(commands.Bot):
-    def __init__(self):
+    def __init__(self, session: JDoodleClient):
         from . import config
 
         allowed_mentions = discord.AllowedMentions(
@@ -27,6 +29,8 @@ class Swiftie(commands.Bot):
             allowed_mentions=allowed_mentions,
             intents=intents,
         )
+
+        self.jdoodle = session
 
     async def setup_hook(self) -> None:
         for extension in initial_extensions:

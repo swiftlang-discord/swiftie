@@ -3,7 +3,7 @@ from discord.ext import commands
 from ..bot import Swiftie
 
 
-class Event(commands.Cog):
+class Events(commands.Cog):
     def __init__(self, bot: Swiftie):
         self.bot = bot
 
@@ -14,4 +14,4 @@ class Event(commands.Cog):
 
 
 async def setup(bot: Swiftie):
-    await bot.add_cog(Event(bot))
+    await bot.add_cog(Events(bot))

@@ -18,7 +18,7 @@ class Misc(commands.Cog):
         ]
 
         start = time.perf_counter()
-        message = await ctx.send("\n".join(response))
+        message = await ctx.reply("\n".join(response))
         end = time.perf_counter()
         duration = (end - start) * 1000
 
