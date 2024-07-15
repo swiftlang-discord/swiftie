@@ -17,14 +17,19 @@ if TOKEN is None:
     log.exception("Couldn't find variable 'BOT_TOKEN' in the environment.")
 
 if GUILD_ID is None:
-    log.exception("Couldn't the variable 'GUILD_ID' in the environment.")
+    log.exception("Couldn't find variable 'GUILD_ID' in the environment.")
 
 if TOKEN is None or GUILD_ID is None:
     exit(1)
 
-if JDOODLE_SECRET is None or JDOODLE_ID is None:
+if JDOODLE_ID is None:
     log.warn(
-        "No environment variables found for 'JDOODLE_ID' and 'JDOODLE_SECRET', the 'swiftie.cogs.eval' extension relies on their API service."
+        "Couldn't find variable 'JDOODLE_ID' in the environment, the 'swiftie.cogs.eval' extension relies on their API service."
+    )
+
+if JDOODLE_SECRET is None:
+    log.warn(
+        "Couldn't find variable 'JDOODLE_SECRET' in the environment, the 'swiftie.cogs.eval' extension relies on their API service."
     )
 
 JDOODLE_EXECUTE_ENDPOINT = "https://api.jdoodle.com/v1/execute"
